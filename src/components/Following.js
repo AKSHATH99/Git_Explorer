@@ -25,10 +25,12 @@ const Following = (props) => {
 
 
   return (
-    <div className='text-white m-4 p-4  '>
-      <p className='m-4 p-4  '>FOLLOWING</p>
-    <div className='flex flex-wrap ml-28'>
-      {following.length == 0
+    <div className='text-black  p-5 mt-3 '>
+      
+    <div className='  flex-row w-max overflow-scroll h-96'>
+    <p className='p-1 top-0 sticky bg-gray-300 text-2xl'>Following ({following.length})</p>
+
+      {following.length == 0  
         ? null
         : following.map((following, index) => (
             <FollowersCard key={index} follower={following} />

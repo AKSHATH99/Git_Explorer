@@ -26,9 +26,10 @@ const Followers = (props) => {
   }
 
   return (
-    <div className='text-white m-4 p-4  '>
-      <p className='m-4 p-4  '>FOLLOWERS</p>
-    <div className='flex flex-wrap ml-28'>
+    <div className='text-black  p-1 mt-3 '>
+      
+    <div className='flex-row w-max overflow-scroll h-96'>
+      <p className=' p-1 top-0 sticky bg-gray-300 text-2xl'>Followers ({followers.length})</p>
       {followers.length == 0
         ? null
         : followers.map((follower, index) => (

@@ -7,24 +7,25 @@ const Repocard = ({ repo }) => {
 
   console.log(repo)
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchlanguages();
-  })
-
-  async function fetchlanguages(){
-    try{
-      const response =await fetch(lang_api);
-      if(!response.ok){
-        throw new Error (`Error: ${response.status} - ${response.statusText}`)
+  }, []);
+  
+  async function fetchlanguages() {
+    try {
+      const response = await fetch(lang_api);
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status} - ${response.statusText}`);
       }
       const json = await response.json();
-      console.log(json);
-      console.log(json[0].css);
-      // setfollowing(json)
-    }catch(error){
-      console.error('Error fetching data:', error.message)
+      console.log(json); // Full API response
+      console.log(json.CSS); // Value associated with 'css' key in the JSON response
+      // setfollowing(json); // Uncomment and use this line if you want to set the state with the entire JSON response
+    } catch (error) {
+      console.error('Error fetching data:', error.message);
     }
   }
+  
 
 
   return (
